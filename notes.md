@@ -1,13 +1,13 @@
 Line 6 of exercise 1
 
-1  git  
-2  pwd  
-3  mkdir my-project  
-4  pwd  
-5  git init  
-6  git status  
-7  ls -a  
-8  ls -a .git  
+1 git  
+2 pwd  
+3 mkdir my-project  
+4 pwd  
+5 git init  
+6 git status  
+7 ls -a  
+8 ls -a .git  
 9 npm -v  
 10 npm install  
 11 npm -v  
@@ -44,8 +44,19 @@ Line 6 of exercise 1
 42 git add .  
 43 git commit -m "Created notes.md file"  
 44 git push -u origin main  
-45 history  
+45 history
 
 //took so long because I forgot to save the first attempt due to not having auto save on by default
 
 Line 10 of exercise 1
+
+46 git add .  
+47 git commit -m "Added the history to nots.md"  
+48 git push -u origin main  
+49 git add .  
+50 git commit -m "Fixed my lines that were grouped together weirdly"  
+51 git push -u origin main  
+52 git add .  
+53 git commit -m "Fixed my lines that were grouped together weirdly part2"  
+54 git push -u origin main  
+55 history  
