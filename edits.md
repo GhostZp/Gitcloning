@@ -1,1 +1,2 @@
 This is my editing file, this is used to make sure I can edit my own code in tandem with my teammates but do it separately and then be able to push it to github and merge everything to main. 
+Okay, trying again this gitcloning, merging and stuff.
