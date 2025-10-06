@@ -1,0 +1,314 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+*:focus {
+    /* outline: none; */
+    outline-color: brown;
+}
+
+body:has(dialog[open]) {
+    overflow-y: hidden;
+}
+
+/* .localStorage: {
+    "teema":"dark"
+} */
+
+:root {
+
+    --bg: #f2b6cc;
+    --bc-accent: #f2bdc7;
+    --text: #000000;
+    --primary: #f2e6d0;
+    --brown: #a6806a;
+    --redClay: #bf928e;
+    --clean: white;
+    --transition-fast: 0.2s ease;
+    --transition: 0.45s ease;
+    --icon-moon: #f1c40f;
+    --icon-sun: #f39c12;
+    --bg-about: #f0f0f0;
+    --bg-footer: #d2379f;
+
+
+}
+
+.dark {
+    --bg: #222222;
+    --bg-accent: #eef2f8;
+    --text: #d9d9d9;
+    --primary: #8c2a7a;
+    --card: #8c8c8c;
+    --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    --icon-moon: #ffd700;
+    --icon-sun: #ffa500;
+    --bg-about: #222;
+    --bg-footer: #8c2a7a;
+}
+
+#logo{
+    Color: var(--clean);
+    -webkit-text-stroke: 1.2px var(--brown);
+    font-size: xx-large;
+}
+
+body {
+    font-size: 1em;
+    margin: 0;
+    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans,
+        Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+    /* color: light-dark(black, rgb(195, 195, 195)); */
+    color: var(--text);
+    background-color: var(--bg);
+    /* background: linear-gradient(135deg, var(--bg), var(--bg-accent)); */
+    /* Transitio: background ja color, var käytä muuttujia */
+    transition: background-color var(--transition) , color var(--transition);;
+}
+
+.wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 72px 20px 96px;
+}
+
+nav, header, main {
+    max-width: 900px;
+    margin: auto;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.header-links {
+    max-width: 270px;
+}
+
+
+
+.black_cl {
+    color: var(--bc-accent);
+}
+
+.bolder {
+    font-weight:bolder;
+}
+
+.fl {
+    float: left;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    position: sticky;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    top: 0;
+    background-color: var(--primary);
+    color: var(--text);
+    z-index: 1;
+    padding: 0.5rem 4rem;
+    font-weight: 100;
+    font-size: 1.2em;
+    box-shadow: 0 8px 16px -6px black;
+    height: 100px;
+
+    /* border: 1px solid #000; */
+}
+nav ul {
+    list-style-type: none;
+    padding-top: 30px;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li:first-child a {
+  /* Fallback: Set a background color. */
+  background-color: rgba(229, 184, 75, 1);
+  
+  /* Create the gradient. */
+  /*background-image: linear-gradient(45deg, #f3ec78, #af4261);*/
+  background-image: linear-gradient(45deg, var(--bg), var(--primary));
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  font-size: larger;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 900;
+  margin-right: 40px;
+}
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.checkbox-label {
+    background-color: var(--primary);
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-moon {
+    color: var(--icon-moon);
+}
+
+.fa-sun {
+    color: var(--icon-sun);
+}
+
+.checkbox-label .ball {
+    background-color: #fff;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+}
+
+
+nav ul a {
+    color: var(--text);
+    padding: 0.6rem;
+    margin: 0 0.25em;
+    font-size: smaller;
+    transition: all 0.5s;
+}
+
+nav ul li a:hover {
+    color: var(--bc-accent);
+}
+
+nav span {
+    width: 22vw;
+
+}
+
+
+.selected {
+    border-bottom: 1px solid var(--bc-accent);
+    color: var(--bc-accent);
+  }
+
+/* Helper classes */
+/*******************/
+
+/* Color */
+
+.main_cl {
+    color: rgb(185, 99, 0);
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+/* DIALOG */
+/******************/
+dialog {
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 30px;
+    margin: auto;
+}
+
+dialog button {
+    margin-top: 20px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(5px);
+}
+
+
+/* ABOUT US area */
+/******************/
+
+.about-us {
+    min-height: 400px;
+    background-color: var(--bg-about);
+    background-image: url('images/sushi.png');
+    background-position: right;
+    padding: 80px 50px;
+    color: rgb(108, 108, 108);
+    position: relative;
+
+}
+
+.chili {
+    position: absolute;
+    top: -180px;
+    right: 0;
+    transform: rotate(45deg);
+    filter: blur(2px);
+    max-width: 300px;
+}
+.about-us p {
+    margin-bottom: 15px;
+}
+.restaurant-inside-img {
+    margin-right: 50px;
+    margin-bottom: 30px;
+    max-width: 330px;
+    border-radius: 20px;
+}
+
+/* FOOTER area */
+/******************/
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-footer);
+    filter: brightness(96%);
+    height: 100px;
+    margin-top: 50px;
+    color: white;
+}
+/* 
+:root {
+
+    --bg: #ffffff;
+    --bg-accent: #eef2f8;
+    --text: #0b0f14;
+    --primary: #b1199f;
+    --card: #ffffff;
+    --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    --transition-fast: 0.2s ease;
+    --transition: 0.45s ease;
+} */
